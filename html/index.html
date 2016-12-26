@@ -53,6 +53,22 @@ input
   submit:
   password:
   hidden:
+
+textarea
+button
+
+select
+option
+
+input
+  email
+  number
+  date
+
+タグ
+  カテゴリー：どの分野か？
+  コンテンツモデル：どのカテゴリーのタグを入れられるか？
+  トランスペアレント：新要素のコンテンツモデルを使ってね？
 -->
 
     <header>
@@ -146,15 +162,61 @@ input
 
     <article>
       <h1>アンケート</h1>
-      <form action="survey.php" method="post">
+      <form action="survey.php" method="post" novalidate>
         <p>1.メールアドレス:<input type="text" name="email" size="50"
-          maxlength="5" value="abc"></p>
+          maxlength="5" value="abc" disabled></p>
         <p>2.メールアドレス:<input type="text" name="email" size="50"
           placeholder="please enter email"></p>
+        <p>メールアドレス：<input type="email" name="email" required></p>
+        <p>料金：<input type="number" name="email"></p>
+        <p>誕生日：<input type="date" name="birthday"></p>
+        <p>
+          コメント：
+          <textarea name="comment" cols="40" rows="5">コメント</textarea>
         <p>ログイン:<input type="password" name="password"></p>
         <input type="hidden" value="user_id" value="23423">
+        <p>
+          Phone:
+          <label><input type="checkbox" name="phone" value="android" checked>
+          Android</label>
+          <input type="checkbox" name="phone" value="iphone" id="iphone">
+          <label for="iphone">iPhone</label>
+        </p>
+        <p>
+          Color:
+          <input type="radio" name="color" value="red" checked> Red
+          <input type="radio" name="color" value="blue"> Blue
+        </p>
+        <p>
+          City:
+          <select name="city">
+            <option value="tokyo">Tokyo</option>
+            <option value="nagoya">Nagoya</option>
+            <option value="osaka" selected>Osaka</option>
+            <option value="kyoto">Kyoto</option>
+            <option value="fukuoka">Fukuoka</option>
+          </select>
+        </p>
+        <p>
+          City:
+          <select name="city" multiple size="5">
+            <option value="tokyo">Tokyo</option>
+            <option value="nagoya">Nagoya</option>
+            <option value="osaka" selected>Osaka</option>
+            <option value="kyoto">Kyoto</option>
+            <option value="fukuoka">Fukuoka</option>
+          </select>
+        </p>
+        <p>
+          <button type="button" disabled>処理する！</button>
+        </p>
         <p><input type="submit" value="送信！"></p>
       </form>
+
+      <h1>文字参照</h1>
+      <p>「&lt;p&gt;タグを段落です」</p>
+      <input type="text" value="区切り文字は&quot;です">
+      <p>「この記号の文字参照は&amp;quot;です」</p>
     </article>
 
     <footer>
